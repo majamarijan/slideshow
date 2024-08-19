@@ -7,3 +7,6 @@ Slideshow in JS, HTML and CSS fully responsive.
 - no js or css libraries included (only font awesome icons)
 
 
+# Preview
+[https://slideshow-with-js-css-html.netlify.app/]
+
