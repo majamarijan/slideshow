@@ -250,6 +250,18 @@ footer .heart {
   text-align: center;
 }
 
+@keyframes pulse {
+  0% {
+    font-size: 0.8rem;
+  }
+  50% {
+    font-size: 1rem;
+  }
+  100% {
+    font-size: 0.8rem;
+  }
+}
+
 @media all and (max-width: 1024px) {
   .wrapper {
     grid-template-columns: 3fr;
