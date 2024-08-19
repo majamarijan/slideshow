@@ -215,6 +215,23 @@ ul {
   right: 0;
 }
 
+footer {
+  background: black;
+  color: white;
+  padding: 4rem 6rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .heart {
+  animation: pulse ease-in-out 2s infinite;
+  display: block;
+  width: 30px;
+  text-align: center;
+}
+
 @media all and (max-width: 1024px) {
   .wrapper {
     grid-template-columns: 3fr;
