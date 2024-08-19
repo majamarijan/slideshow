@@ -41,7 +41,7 @@ ul {
   grid-template-rows: auto 2fr;
   position: relative;
   padding-top: 2rem;
-  min-height: 150vh;
+  min-height: 100vh;
 }
 
 .content {
