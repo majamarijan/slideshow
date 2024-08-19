@@ -1,5 +1,5 @@
 # slideshow
-Slideshow in JS, HTML and CSS
+Slideshow in JS, HTML and CSS fully responsive.
 
 # Features
 - raw JS slideshow
