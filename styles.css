@@ -19,11 +19,25 @@ ul {
   padding: 0;
 }
 
+header {
+  padding: 1rem 24px;
+  background: rgba(0,0,0,.5);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top:0;
+  left: 0;
+  right:0;
+  z-index: 100;
+  height: 100px;
+}
+
 #select {
-  border: none;
   padding: 12px 24px;
   background: black;
   color: white;
+  margin-left: auto;
+  border: 1px solid gray;
+  border-radius: 4px;
 }
 
 .selectWrapper {
