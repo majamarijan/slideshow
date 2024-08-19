@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: rgb(30, 30, 30);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#select {
+  border: none;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 580px auto;
+  grid-template-rows: auto 2fr;
+  position: relative;
+  padding-top: 2rem;
+  min-height: 150vh;
+}
+
+.content {
+  grid-column: 1;
+  grid-row: 1/-1;
+  padding-inline: 2rem;
+}
+
+.content .contentWrapper {
+  position: relative;
+  max-width: 350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  grid-template-rows: 50px 300px 80px 1fr;
+  transition: 0.4s ease-in-out;
+  border: 2px solid white;
+}
+
+.contentFadeIn {
+  opacity: 0.5;
+  filter: blur(5px);
+  animation: fadeIn 0.4s 0.1s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  to {
+    filter: unset;
+    opacity: 1;
+  }
+}
+
+.content .contentWrapper img {
+  grid-column: 1/-1;
+  grid-row: 2 / 4;
+  height: 100%;
+  opacity:.75;
+  border-left: 2px solid #202020;
+  border-radius: 8px;
+  box-shadow: 4px 2px 12px #fefefe;
+  
+}
+
+.content .contentWrapper .contentInfo {
+  grid-row: 3/-1;
+  grid-column: 2;
+  font-size: clamp(0.76rem, 5vw, 0.9rem);
+  display: flex;
+  flex-flow: row;
+  max-width: 650px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  color: whitesmoke;
+  padding: 2rem;
+  border-radius: 4px;
+}
+
+.contentInfo .group {
+  width: max-content;
+}
+
+.contentInfo ul li {
+  padding-block: 4px;
+  font-style: italic;
+  color: gray;
+}
+
+.contentInfo h3,
+.contentInfo h2 {
+  padding-bottom: 8px;
+}
+
+.contentInfo .group:nth-child(1) {
+  border-right: 1px solid gray;
+  flex: 1 80%;
+}
+
+.contentInfo .group:nth-child(2),
+.contentInfo .group:nth-child(3) {
+  flex: 1 50%;
+  padding-inline-start: 2rem;
+}
+
+.bio {
+  width: 80%;
+}
+
+.info {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.slideshow {
+  grid-column: 2 / -1;
+  grid-row: 1;
+  width: 100%;
+  /*   max-width: 650px; */
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  min-height: 250px;
+  overflow: hidden;
+}
+
+.slider {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  gap: 12px;
+  transition: 1.2s ease-in-out;
+}
+
+.slider .card {
+  width: 175px;
+  background: lightgray;
+  border-radius: 12px 8px;
+  position: relative;
+  opacity: 0.56;
+  transition: 0.4s linear;
+}
+
+.slider .card:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.slider .card .cardWrapper {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.slider .card .cardWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
+
+.slider .card .cardWrapper .text {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 6px 2px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-weight: 200;
+  border-radius: inherit;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.btn {
+  border: none;
+  background: none;
+  font-size: 2.4rem;
+  position: absolute;
+  z-index: 400;
+  color: white;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.forward {
+  right: 0;
+}
+
+@media all and (max-width: 1024px) {
+  .wrapper {
+    grid-template-columns: 3fr;
+    grid-auto-rows: auto;
+  }
+  .slideshow {
+    grid-column: 1/-1;
+    grid-row: 1;
+  }
+
+  .content {
+    grid-column: 1/-1;
+    grid-row: 2;
+  }
+
+  .info {
+    grid-row: -1;
+    grid-column: 1/-1;
+  }
+
+  .content .contentWrapper {
+    max-width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-block: 2rem;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .content .contentWrapper img {
+    width: 250px;
+  }
+ 
+  .content .contentWrapper .contentInfo {
+    margin-top: -50px;
+    width: 100%;
+  }
+  .content .contentWrapper .contentInfo .group {
+    width: 100%;
+    border: none;
+  }
+}
+
+@media all and (max-width: 680px) {
+  .content .contentWrapper .contentInfo {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+  }
+
+  .content .contentWrapper .contentInfo .group:nth-child(2),
+  .content .contentWrapper .contentInfo .group:nth-child(3) {
+    padding-inline: 0;
+  }
+}
