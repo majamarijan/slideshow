@@ -49,6 +49,10 @@ header {
   padding: 12px;
 }
 
+.spacer {
+  height: 130px;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 580px auto;
