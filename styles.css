@@ -46,7 +46,6 @@ ul {
   grid-template-columns: 230px 1fr;
   grid-template-rows: 50px 300px 80px 1fr;
   transition: 0.4s ease-in-out;
-  border: 2px solid white;
 }
 
 .contentFadeIn {
