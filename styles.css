@@ -21,6 +21,18 @@ ul {
 
 #select {
   border: none;
+  padding: 12px 24px;
+  background: black;
+  color: white;
+}
+
+.selectWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: clamp(.8rem, 5vw,1rem);
+  padding: 12px;
 }
 
 .wrapper {
