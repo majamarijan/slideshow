@@ -10,3 +10,4 @@ Slideshow in JS, HTML and CSS fully responsive.
 # Preview
 [https://slideshow-with-js-css-html.netlify.app/]
 
+![Responsive](https://github.com/user-attachments/assets/cb18b8f5-cebe-4b8e-8b4e-0199ce21a6f0)
