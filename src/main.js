@@ -4,23 +4,29 @@ let slideshowWidth;
 window.onload = () => {
   const slideshow = document.querySelector(".slideshow");
   const select = document.querySelector("#select");
-  let url = "https://freetestapi.com/api/v1/" + select.value;
+  let val = select.value;
 
   if (select) {
     select.onchange = (e) => {
-      url = "https://freetestapi.com/api/v1/" + e.target.value;
+      console.log(e.target.value)
+      val = e.target.value;
       document.querySelector(".content").innerHTML = "";
       document.querySelector(".slider").innerHTML = "";
-      controlData(url);
+      controlData(val);
     };
   }
-  controlData(url);
+  controlData(val);
   slideshowWidth = slideshow.getBoundingClientRect().width;
 };
 
-function controlData(url) {
-  const res = fetchData(url);
-  res.then((data) => {
+async function fetchData(val) {
+  const res = await fetch("https://www.freetestapi.com/api/v1/"+val+'?limit=25');
+  const json = await res.json();
+  return json;
+}
+
+function controlData(val) {
+    fetchData(val).then((data) => {
     buildUISlider(data);
     displayContent(data[0]);
     sliderController();
@@ -28,23 +34,13 @@ function controlData(url) {
 }
 
 window.onresize = () => {
-  slideshowWidth = document.querySelector(".slideshow").getBoundingClientRect()
-    .width;
+  slideshowWidth = document
+    .querySelector(".slideshow")
+    .getBoundingClientRect().width;
 };
-
-async function fetchData(url) {
-  try {
-    const res = await fetch(url + "?limit=25");
-    const json = await res.json();
-    return json;
-  } catch (err) {
-    throw new Error("Something whent wrong!");
-  }
-}
 
 function buildUISlider(data) {
   const slider = document.querySelector(".slider");
-  const content = document.querySelector(".content");
   if (data.length > 0) {
     data.forEach((d) => {
       const card = document.createElement("div");
